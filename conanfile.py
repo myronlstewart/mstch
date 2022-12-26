@@ -11,20 +11,6 @@ class MstchConan(ConanFile):
     author = "Daniel Sipka"
     no_copy_source = True
 
-    # exports_sources = "CMakeLists.txt", "include/*"
-
-    # def export_sources(self):
-    #     self.copy("*")
-    #
-    # def package(self):
-    #     self.copy("*.a", dst="lib", keep_path=False)
-    #     self.copy("*.hpp", dst="include", src="include")
-    #
-    # def package_info(self):
-    #     self.cpp_info.includedirs = ["include"]
-    #     self.cpp_info.libdirs = ["cmake-build-release/lib"]
-
-
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
 
@@ -49,8 +35,6 @@ class MstchConan(ConanFile):
     def package(self):
         self.copy("*.a", dst="lib", keep_path=False)
         self.copy("*.hpp", dst="include", src="include")
-        # cmake = CMake(self)               # -> Needed if an install is necessary
-        # cmake.install()                   # -> Needed if an install is necessary
 
     def package_info(self):
         self.cpp_info.includedirs = ["include"]      # List of header directories
