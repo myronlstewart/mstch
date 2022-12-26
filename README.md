@@ -210,6 +210,12 @@ mstch::config::escape = [](const std::string& str) -> std::string {
 };
 ```
 
+## Building using Conan
+
+```bash
+conan create . mstch/stable
+```
+
 ## Requirements
 
  - A C++ compiler with decent C++11 support. Currently tested with:
